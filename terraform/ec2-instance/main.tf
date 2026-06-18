@@ -1,12 +1,10 @@
-
-
 provider "aws" {
   region = "ap-south-1"
 }
 
 resource "aws_instance" "example" {
-  ami                    = "ami-01a00762f46d584a1"
-  instance_type          = "t2.small"
+  ami                    = var.ami_id
+  instance_type          = var.instance_type
   vpc_security_group_ids = ["sg-041606a467411fbc2"]
 
   tags = {
